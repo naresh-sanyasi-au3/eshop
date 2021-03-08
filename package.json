@@ -26,10 +26,7 @@
   },
   "scripts": {
     "start": "node app.js",
-    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm run build --prefix eshop",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "heroku-postbuild":"NPM_CONFIG_PRODUCTION=false npm run build --prefix eshop"
   },
   "eslintConfig": {
     "extends": [
