@@ -8,11 +8,6 @@ app.use(express.json());
 
 
 
-
-app.get("/", (req, res) => {
-    res.send("welcome");
-});
-
 app.post("/checkout", async(req, res) => {
     let error;
     let status;
