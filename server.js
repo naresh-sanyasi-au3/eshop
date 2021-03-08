@@ -6,6 +6,9 @@ const { v4: uuidv4 } = require('uuid');
 app.use(cors());
 app.use(express.json());
 
+
+
+
 app.get("/", (req, res) => {
     res.send("welcome");
 });
@@ -50,16 +53,15 @@ app.post("/checkout", async(req, res) => {
     res.json({status})
 
 });
-
 const port = process.env.PORT || 8000;
 
-if (process.env.NODE_ENV == "production") {
-    app.use(express.static('build'))
-    const path = require('path')
+if (process.env.NODE_ENV === "production") {
+    app.use(express.static('build'));
+    const path = require('path');
     app.get("*", (req, res) => {
-        res.sendFile(path.resolve(__dirname, 'build', 'index.html'))
-    })
-}
+        res.sendFile(path.resolve(__dirname, 'build', 'index.html'));
+    });
+};
 app.listen(port, () => {
     console.log("server is running");
 });
